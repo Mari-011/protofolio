@@ -115,12 +115,24 @@ header .icon-close:hover{
     color: crimson;
     rotate: 100deg;
 }
+
+
+header .icon-sun{
+    color: rgb(255 165 0);
+
+
+}
+.mode{
+    box-shadow: 1px 1px 40px rgba(35 35 36 0.165);
+}
+
+
 @media(max-width:700px){
-header.flex nav {
-    display: none;
-   
-}
-header.flex .menu{
-    display: block;
-}
-}
+    header.flex nav {
+        display: none;
+       
+    }
+    header.flex .menu{
+        display: block;
+    }
+    }

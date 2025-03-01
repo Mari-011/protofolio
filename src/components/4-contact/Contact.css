@@ -53,9 +53,34 @@ section.contact-us .submit {
   margin-top: 1.8rem;
   border: 1px solid rgb(63 63 70);
 }
+.light section.contact-us .submit{
+  background-color: var(--submit);
+}
 section.contact-us .submit:hover {
   scale: 0.96;
 }
+.light section.contact-us #email,
+.light section.contact-us #message{
+background-color: rgba(255 255 255 0.162);
+border:1px solid rgba(128 128 128 0.451);
+box-shadow: 1px 1px 1px rgba(73 73 73 0.105);
+color: #232324;
+}
+
+
+.light section.contact-us #email:focus,
+.light section.contact-us #message:focus,
+.light section.contact-us #email:hover,
+.light section.contact-us #message:hover
+{
+  border:1px solid rgb(78 80 80 );
+  
+}
+
+@media (max-width: 1100px) {
+  section.contact-us .animation {
+    display: none;
+  } }
 @media (max-width: 600px) {
   section.contact-us .animation {
     display: none;
@@ -64,8 +89,8 @@ section.contact-us .submit:hover {
     display: flex;
     flex-direction: column;
     width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
   }
   section.contact-us form div.flex {
     flex-direction: column;
@@ -82,6 +107,7 @@ section.contact-us #message {
 }
 section.contact-us .submit{
     width: 30%;
+  
 }
 
 }

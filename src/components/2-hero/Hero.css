@@ -4,22 +4,25 @@ section.hero{
 section.hero .left-section{
 flex-grow: 1;
 }
-section.hero .avatar{
-width: 150px;
-border-radius: 50%;
-border: 2px solid var(--title);
-box-shadow: 2px 1px 40px rgba(104, 28, 28, 0.653);
 
-   
-}
 section.hero .parent-avatar{
+    min-height: 160px;
    align-items: end;
    gap: 0.6rem;
 }
+section.hero .avatar{
+    width: 120px;
+  margin: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--title);
+    box-shadow: 2px 1px 40px rgba(104, 28, 28, 0.653);
+    
+       
+    }
 section.hero .icon-verified{
     color: var(--blue);
     font-size: 1.1rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.77rem;
     
 }
 
@@ -47,4 +50,12 @@ section.hero .social-icons .icon:hover{
     color: var(--icon-hover);
     transition: 0.3s;
     cursor: pointer;
+}
+.right-section.animation{
+
+    width: 100%;
+    translate: 100px 100px;
+}
+@media(max-width:1250px){
+    .right-section.animation {display: none;} 
 }

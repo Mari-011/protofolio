@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../2-hero/Hero.css";
+import hero from '../../animations/hero.json'
+import Lottie from "lottie-react";
+import { motion } from "motion/react";
 export default function Hero() {
+  const lottieRef =useRef();
   return (
-    <section className="hero flex">
+    <section className="hero flex" style={{justifyContent:"space-between"}}>
       <div className="left-section ">
-        <div className="parent-avatar flex">
-          <img src="./protofolio.png" className="avatar" />
+        <div className="parent-avatar  flex">
+          <motion.img src="./protofolio.png"
+          initial={{transform:"scale(0)"}}
+          animate={{transform:"scale(1.1)"}}
+          transition={{type:"spring",stiffness:100,damping:6}}
+           className="avatar" 
+          />
           <div className="icon-verified"></div>
         </div>
-        <h1 className="title">
+        <motion.h1
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{duration:2}}
+        className="title">
           Software group design and all mobile application
-        </h1>
+        </motion.h1>
         <p className="subtitle">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sit libero
           illum quidem possimus architecto esse unde aut ipsa asperiores
@@ -24,7 +37,15 @@ export default function Hero() {
           <div className="icon icon-github"></div>
         </div>
       </div>
-      <div className="right-section animation  border"></div>
+      <div className="right-section animation  ">
+      <Lottie 
+        lottieRef={lottieRef} 
+        onLoadedImages={()=>{lottieRef.current.setSpeed(1)}}
+      
+       animationData={hero} 
+       style={{width:"500px"}}/>
+        
+      </div>
     </section>
   );
 }
