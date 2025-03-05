@@ -1,5 +1,5 @@
 import React from "react";
-import "../5-footer/Footer.css";
+import "../6-footer/Footer.css";
 export default function Footer() {
   return (
     <footer className="flex">

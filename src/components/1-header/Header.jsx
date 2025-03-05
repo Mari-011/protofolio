@@ -21,19 +21,19 @@ export default function Header() {
       <nav>
         <ul className="flex">
           <li>
-            <a href="">About</a>
+            <a href="/">About</a>
           </li>
           <li>
-            <a href="">Articles</a>
+            <a href="/projects">Projects</a>
           </li>
           <li>
-            <a href="">Projects</a>
+            <a href="/group">Group</a>
           </li>
           <li>
-            <a href="">Speaking</a>
+            <a href="/contact">Contact</a>
           </li>
           <li>
-            <a href="">Contact</a>
+            <a href="">Skilles</a>
           </li>
         </ul>
       </nav>
@@ -54,21 +54,21 @@ export default function Header() {
        
        <ul className="modal ">
         <li ><button className="icon-close  " onClick={()=>setShowModal(false)}></button></li>
-         <li >
-           <a href="">About</a>
-         </li>
-         <li>
-           <a href="">Articles</a>
-         </li>
-         <li>
-           <a href="">Projects</a>
-         </li>
-         <li>
-           <a href="">Speaking</a>
-         </li>
-         <li>
-           <a href="">Uses</a>
-         </li>
+        <li>
+            <a href="/">About</a>
+          </li>
+          <li>
+            <a href="/projects">Projects</a>
+          </li>
+          <li>
+            <a href="/group">Group</a>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+          <li>
+            <a href="">Skilles</a>
+          </li>
        </ul>
     
    </div>)}

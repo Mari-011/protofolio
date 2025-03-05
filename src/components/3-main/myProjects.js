@@ -11,32 +11,32 @@ export  const myProjects = [
     },
     {
       projectTitle: "sign up with  ",
-      category: ["flutter "],
+      category: ["flutter ","css"],
       imgPath: "../../../../../../public/images/14.jpg",
     },
     {
       projectTitle: "flutter project ",
-      category: ["flutter"],
+      category: ["flutter","node"],
       imgPath: "../../../../../../public/images/13.png",
     },
 
     {
       projectTitle: "react js",
-      category: ["js", "react"],
+      category: ["css", "react"],
       imgPath: "../../../../../public/images/react.png",
     },
     {
       projectTitle: "node",
-      category: ["node", "css"],
+      category: ["css"],
       imgPath: "../../../../../../public/images/nodejs.png",
     },  {
       projectTitle: "react2",
-      category: ["js", "react"],
+      category: [ "react",],
       imgPath: "../../../../../public/images/react2.png",
     },
     {
       projectTitle: "MUI",
-      category: [ "react"],
+      category: [ "react","css"],
       imgPath: "../../../../../public/images/template-4dark.jpg",
     },
   ];

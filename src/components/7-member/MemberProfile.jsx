@@ -1,15 +1,31 @@
 import React, { useState } from "react";
-import "../3-main/Main.css";
-import { myProjects } from "./myProjects";
+import { useParams } from "react-router-dom";
+import { OurGroup } from "../4-group/OurGroup"; 
+import Lottie from "lottie-react";
 import { AnimatePresence, motion } from "motion/react";
-export default function Main() {
+import pro from "../../animations/pro.json"; 
+import "./MemberProfile.css"; 
+import Contact from "../5-contact/Contact";
+import Footer from "../6-footer/Footer";
+import Group from "../4-group/Group";
+import Main from "../3-main/Main";
+
+export default function MemberProfile() {
+  
   const [currentActive, setCurrentActive] = useState("all");
  
 
-  const [arr, setArr] = useState(myProjects);
+  const { id } = useParams(); 
+  const member = OurGroup.find((member) => member.id === parseInt(id));
+
+  if (!member) {
+    return <h1>Member Not Found</h1>;
+  }
+  const memberProjects=member.projects;
+  const [arr, setArr] = useState(memberProjects);
   const handleClick = (buttonCategory) => {
     setCurrentActive(buttonCategory);
-    const newArray = myProjects.filter((item) => {
+    const newArray = memberProjects.filter((item) => {
       const zzz = item.category.find((cat) => {
         return cat === buttonCategory;
       });
@@ -21,13 +37,52 @@ export default function Main() {
   };
 
   return (
+    <div className="member">
+    <section className=" hero flex" >
+      <div className="left-section ">
+        <div className="parent-avatar flex">
+          <motion.img
+            src={member.imagePath} 
+            initial={{ transform: "scale(0)" }}
+            animate={{ transform: "scale(1.1)" }}
+            transition={{ type: "spring", stiffness: 100, damping: 6 }}
+            className="user-image avatar"
+          />
+          <div className="icon-verified"></div>
+        </div>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="title"
+        >
+          {member.name} - {member.work} 
+        </motion.h1>
+        <p className="subtitle">
+          {member.bio || "This member is part of our amazing team!"}
+        </p>
+        <div className="social-icons flex">
+          <div className="icon icon-facebook"></div>
+          <div className="icon icon-linkedin2"></div>
+          <div className="icon icon-twitter"></div>
+          <div className="icon icon-github"></div>
+        </div>
+      </div>
+      <div className="right-section animation" >
+        <Lottie animationData={pro} style={{ width: "500px" }} />
+      </div>
+      
+     
+    </section>
+    <div className="divider" />
+  
     <main className="flex ">
       <section className=" flex  left-section">
         <button
           className={currentActive === "all" ? "active" : ""}
           onClick={() => {
             setCurrentActive("all");
-            setArr(myProjects);
+            setArr(memberProjects);
           }}
         >
           All Projects
@@ -120,5 +175,15 @@ export default function Main() {
       
       </section>
     </main>
+  
+
+    
+    
+    <div className="divider" />
+    <Contact/>
+    <div className="divider" />
+    <Footer/>
+    </div>
+    
   );
 }

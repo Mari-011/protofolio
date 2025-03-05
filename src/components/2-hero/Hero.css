@@ -9,8 +9,10 @@ section.hero .parent-avatar{
     min-height: 160px;
    align-items: end;
    gap: 0.6rem;
+   object-fit: cover;
 }
 section.hero .avatar{
+    object-fit: cover;
     width: 120px;
   margin: 20px;
     border-radius: 50%;

@@ -63,6 +63,7 @@ border:none;
 .card .icon-link {
   font-size: 1.2rem;
   color: var(--subtitle);
+margin-right: 16px;
 }
 .card .icon-github:hover,
 .card .icon-link:hover {
