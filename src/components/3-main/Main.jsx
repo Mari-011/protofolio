@@ -5,11 +5,19 @@ import { AnimatePresence, motion } from "motion/react";
 export default function Main() {
   const [currentActive, setCurrentActive] = useState("all");
  
-
+  const [projects, setProjects] = useState([]);
   const [arr, setArr] = useState(myProjects);
+  
+
+
+
+
+
+
+
   const handleClick = (buttonCategory) => {
     setCurrentActive(buttonCategory);
-    const newArray = myProjects.filter((item) => {
+    const newArray = projects.filter((item) => {
       const zzz = item.category.find((cat) => {
         return cat === buttonCategory;
       });
@@ -19,6 +27,10 @@ export default function Main() {
 
     setArr(newArray);
   };
+
+
+  
+
 
   return (
     <main className="flex ">
@@ -71,9 +83,9 @@ export default function Main() {
       </section>
       <section className=" flex right-section  ">
         <AnimatePresence>
-        {arr.map((item) => {
+        {projects.map((item) => {
           return (
-            <motion.article key={item.imgPath} className="card  "
+            <motion.article key={item.name} className="card  "
             layout
             initial={{transform:"scale(0)"}}
             animate={{transform:"scale(1)"}}
@@ -98,7 +110,7 @@ export default function Main() {
                 </p>
                 <div className="flex icons ">
                   <div 
-                  // style={{ gap: "11px" }}
+                 
                    className="flex">
                     <div className="icon-link"></div>
                     <div className="icon-github"></div>
@@ -120,5 +132,6 @@ export default function Main() {
       
       </section>
     </main>
+   
   );
 }
